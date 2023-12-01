@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tank</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+body {
+    background-image: url('https://st.depositphotos.com/3456837/4910/i/950/depositphotos_49109927-stock-photo-cracked-dirt-background.jpg');
+    background-size: cover; /* size bg*/
+    background-repeat: repeat;  /* repeat the bg so it connected*/
+    margin: 0;
+    padding: 0;
+    animation: backgroundScroll 25s linear infinite; /* makes the bg move*/
+}
+
+@keyframes backgroundScroll {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 100%; /* Adjust the 100% based on your background size */
+    }
+}
+
+    .img {
+        position: absolute;
+        transition: top 0.5s ease;
+        width: 100px;
+        align-items: center;
+    }
+
+    .atas {
+        width: 100%;
+        height: 90%;
+    }
+
+    .bawah {
+    width: 100%;
+    height: 10%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .opponent {
+    position: absolute;
+    transition: top 0.5s ease;
+    width: 50px;
+}
+
+    </style>
+</head>
+
+<body style="font-family: 'Poppins', sans-serif;">
+    <div class="" id="scoreDisplay">
+        <h1 class="text-3xl ml-5 mt-5 text-white font-semibold">Score: <span id="score">0</span></h1>
+    </div>
+    <div class="atas"></div>
+    <img src="opponent.png" id="opponent" class="img w-1/6">
+    
+    <div class="bawah">
+        <img src="canon-ball.png" id="bullet" class="img" width="30px">
+        <img src="tank.png" id="tank" class="img" width="50px">
+    </div>
+    <script src="main.js"></script>
+    <audio src="sound.mp3" id="shootSound"></audio>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</html>
